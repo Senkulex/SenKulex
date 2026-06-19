@@ -59,8 +59,12 @@ p{color:var(--text-mid);line-height:1.8}
 /* NAV */
 nav{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(5,8,20,.85);border-bottom:1px solid rgba(95, 212, 232, 0.2); box-shadow: 0 0 10px rgba(95, 212, 232, 0.05); transition:var(--t)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-.logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--white); text-shadow: 0 0 5px var(--violet);}
-.logo-mark{width:32px;height:32px;border-radius:8px;background:transparent; border: 2px solid var(--violet); box-shadow: 0 0 5px var(--violet), inset 0 0 5px var(--violet); display:flex;align-items:center;justify-content:center;color:#fff;font-family:'DM Mono',monospace;font-weight:700;font-size:.82rem; text-shadow: 0 0 2px var(--violet);}
+
+/* LOGO IMAGE STYLING */
+.logo{display:flex;align-items:center;gap:10px;}
+.logo img { height: 42px; width: auto; transition: var(--t); }
+.logo:hover img { transform: scale(1.02); }
+
 .nav-right{display:flex;align-items:center;gap:14px;margin-left:auto}
 .nav-links{display:flex;gap:2px}
 .nav-links a{padding:8px 14px;border-radius:8px;font-size:.86rem;color:var(--text-mid);transition:var(--t)}
@@ -146,7 +150,8 @@ nav{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(5,8,20,.85);bor
 footer{background:rgba(5,8,20,0.92); padding:52px 0 28px;font-size:.86rem;border-top:1px solid var(--cyan); box-shadow: 0 -5px 15px rgba(95,212,232,.05);}
 .foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;padding-bottom:28px;border-bottom:1px solid var(--glass-border)}
 .foot-brand{max-width:320px}
-.foot-brand .logo{color:#fff;margin-bottom:12px}
+.foot-brand .logo{margin-bottom:12px; height: 50px;}
+.foot-brand .logo img { height: 100%; width: auto; }
 .foot-bottom{padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:'DM Mono',monospace;font-size:.72rem;color:var(--text-dim)}
 .foot-links{display:flex;flex-direction:column;gap:8px;font-family:'DM Mono',monospace;font-size:.78rem;color:var(--text-mid)}
 .foot-links a:hover{color:var(--cyan); text-shadow: 0 0 4px var(--cyan);}
@@ -170,7 +175,7 @@ footer{background:rgba(5,8,20,0.92); padding:52px 0 28px;font-size:.86rem;border
 
 <nav>
   <div class="wrap nav-in">
-    <a href="#" class="logo"><span class="logo-mark">S</span>SenKulex</a>
+    <a href="#" class="logo"><img src="logo.png" alt="SenKulex"></a>
     <div class="nav-right">
       <div class="nav-links">
         <a href="#about" data-i18n="nav_about">About</a>
@@ -287,7 +292,7 @@ footer{background:rgba(5,8,20,0.92); padding:52px 0 28px;font-size:.86rem;border
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <div class="logo"><span class="logo-mark">S</span>SenKulex</div>
+        <div class="logo"><img src="logo.png" alt="SenKulex"></div>
         <p style="color:var(--text-mid);font-size:.85rem" data-i18n="foot_desc">Independent studio for social and business ventures. Belgium &amp; Ukraine.</p>
       </div>
       <div class="foot-links">
@@ -320,17 +325,17 @@ var T={
   dir4_h:"Ваша ідея",dir4_p:"Вільне місце для партнера",
   about_eyebrow:"Хто ми",about_h:"Вільна, незалежна команда без фіксованої ніші.",
   about_p:"SenKulex — не агентство на підряді і не фонд із грантами. Ми партнери, які входять у проєкт руками: продукт, текст, автоматизація, запуск.",
-  pr1_h:"Свобода",pr1_p:"Без довгострокових контрактів і нав'язаної структури — входимо й виходимо за домовленістю.",
+  pr1_h:"Свобода",pr1_p:"Без довгострокових контраків і нав'язаної структури — входимо й виходимо за домовленістю.",
   pr2_h:"Два ринки",pr2_p:"Бельгія та Україна одночасно — розуміємо обидва контексти.",
   pr3_h:"Соціальне + бізнес",pr3_p:"Не розділяємо «для душі» і «заради грошей» — шукаємо проєкти, де це збігається.",
   aud_eyebrow:"Шукаємо партнерів",aud_h:"Якщо у вас є ідея — поговорімо.",
   aud_p:"Від начерку до робочого MVP. Особливо цікаві теми на стику Бельгії та України: міграція, легалізація, доступ до послуг, цифрова безпека, підтримка бізнесу.",
   fmt1_tag:"Формат 01",fmt1_h:"Спільний запуск",fmt1_p:"Ви — експертиза, ми — продукт, упаковка й автоматизація.",
-  fmt2_tag:"Формат 02",fmt2_h:"Консультація та упаковка",fmt2_p:"Перетворюємо вашу ідею на робочий продукт, від і до.",
+  fmt2_tag:"Format 02",fmt2_h:"Консультація та упаковка",fmt2_p:"Перетворюємо вашу ідею на робочий продукт, від і до.",
   fmt3_tag:"Формат 03",fmt3_h:"Просто розмова",fmt3_p:"Ще не впевнені, що саме потрібно? Нормально — обговоримо.",
   cta_eyebrow:"Зв'язатися",cta_h:"Розкажіть про свій проєкт.",
   cta_p:"Кількох рядків достатньо для старту. Відповімо протягом одного робочого дня і разом зрозуміємо, чи підходить.",
-  cta_pt1:"Без зобов'язань і продажів",cta_pt2:"Відповідь протягом одного робочого дня",cta_pt3:"Конфіденційно за замовчуванням",
+  cta_pt1:"Без зобов'язань і продажів",cta_pt2:"Відповідь протягом одного робочого дня",cta_pt3:"Confidential by default",
   form_lbl:"Пропозиція проєкту",form_h:"Розкажіть про свою ідею",
   ph_name:"Ваше ім'я",ph_email:"Ваш email",ph_msg:"Коротко про проєкт (2-3 речення)",
   form_btn:"Надіслати",err_fields:"Заповніть усі поля",err_email:"Введіть коректний email",
@@ -361,7 +366,7 @@ var T={
   fmt3_tag:"Format 03",fmt3_h:"Just a conversation",fmt3_p:"Not sure exactly what you need yet? That's fine — let's talk it through.",
   cta_eyebrow:"Get in touch",cta_h:"Tell us about your project.",
   cta_p:"A few lines is enough to start. We'll reply within one working day and figure out together whether it's a fit.",
-  cta_pt1:"No obligation, no sales pitch",cta_pt2:"Reply within one working day",cta_pt3:"Confidential by default",
+  cta_pt1:"No obligation, no sales pitch",cta_pt2:"Reply within one working day",cursor:"Confidential by default",
   form_lbl:"Project proposal",form_h:"Pitch us your idea",
   ph_name:"Your name",ph_email:"Your email",ph_msg:"A few lines about the project",
   form_btn:"Send",err_fields:"Please fill in all fields",err_email:"Enter a valid email",
